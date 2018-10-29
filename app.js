@@ -11,6 +11,7 @@ const express = require("express"),
   usersRoutes = require("./routes/users"),
   authRoutes = require("./routes/auth"),
   stylesRoutes = require("./routes/styles");
+
 const logger = winston.createLogger({
   level: "error",
   transports: [new winston.transports.File({ filename: "errorLog.log" })]
@@ -45,7 +46,8 @@ const options = {
 
 mongoose
   .connect(
-    "mongodb://localhost:27017/webib",
+    //"mongodb://localhost:27017/webib",
+    config.get("db"),
     options
   )
   .then(() => console.log("Connected to mongodb"))

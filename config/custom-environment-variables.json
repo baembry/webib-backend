@@ -1,3 +1,4 @@
 {
-  "jwtPrivateKey": "webib_jwtPrivateKey"
+  "jwtPrivateKey": "webib_jwtPrivateKey",
+  "db": "webib_db"
 }
