@@ -1,7 +1,7 @@
 //install mongodb, mongoose
 const express = require("express"),
   winston = require("winston"), //error logger
-  app = express(),
+  cors = require("cors"),
   mongoose = require("mongoose"),
   config = require("config"),
   error = require("./middleware/error"),
@@ -10,7 +10,8 @@ const express = require("express"),
   allEntriesRoutes = require("./routes/allEntries"),
   usersRoutes = require("./routes/users"),
   authRoutes = require("./routes/auth"),
-  stylesRoutes = require("./routes/styles");
+  stylesRoutes = require("./routes/styles"),
+  app = express();
 
 const logger = winston.createLogger({
   level: "error",
@@ -55,6 +56,7 @@ mongoose
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.use("/collections", collectionsRoutes);
 app.use("/entries", entriesRoutes);

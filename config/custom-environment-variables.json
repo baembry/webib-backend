@@ -1,3 +1,5 @@
+//set these keys in heroku with: heroku config:set key=value
+
 {
   "jwtPrivateKey": "webib_jwtPrivateKey",
   "db": "webib_db"

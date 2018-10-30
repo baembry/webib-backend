@@ -1,4 +1,4 @@
 {
-  "jwtPrivateKey": "",
+  "jwtPrivateKey": "insecureKey",
   "db": "mongodb://localhost:27017/webib"
 }
