@@ -6,6 +6,10 @@ const mongoose = require("mongoose"),
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
+    unique: true
+  },
+  email: {
+    type: String,
     unique: true,
     required: true
   },
@@ -24,7 +28,9 @@ function validateUser(user) {
   const schema = {
     username: Joi.string()
       .min(3)
-      .max(50)
+      .max(50),
+    email: Joi.string()
+      .email()
       .required(),
     password: Joi.string()
       .min(5)

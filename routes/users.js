@@ -11,14 +11,13 @@ router.post(
     if (error) return res.status(400).send(error.details[0].message);
 
     //make sure user is not already registered
-    let user = await User.findOne({ username: req.body.username });
-    if (user)
-      return res.status(400).send("That username is already registered");
+    let user = await User.findOne({ email: req.body.email });
+    if (user) return res.status(400).send("That email is already registered");
 
     const salt = await bcrypt.genSalt(10);
     const password = await bcrypt.hash(req.body.password, salt);
     const newUser = await User.create({
-      username: req.body.username,
+      email: req.body.email,
       password: password,
       createdAt: req.body.createdAt
     });

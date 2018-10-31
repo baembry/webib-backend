@@ -22,16 +22,14 @@ router.post(
     if (!req.user) {
       return res.status(410).send("Unauthorized");
     }
-    console.log("posting to entries...");
     entry.userId = req.user._id;
     entry.pageRange = entry.startPage
       ? entry.startPage + "-" + entry.endPage
       : null;
     const newEntry = await Entry.create(entry);
-    console.log("new entry: ", newEntry);
-    console.log("posting to collection...");
     let collection = null;
-    if (collectionId !== undefined) {
+    if (collectionId && collectionId !== "undefined") {
+      console.log("collectionId and type: ", collectionId, typeof collectionId);
       collection = await Collection.findById(collectionId);
       collection.entries.push(newEntry);
       collection.save();
