@@ -9,8 +9,8 @@ router.post(
   tryCatch(async (req, res) => {
     //make sure user is not already registered
 
-    let user = await User.findOne({ username: req.body.username });
-    if (!user) return res.status(400).send("Invalid username or password");
+    let user = await User.findOne({ email: req.body.email });
+    if (!user) return res.status(400).send("Invalid email or password");
 
     const passwordValid = await bcrypt.compare(
       req.body.password,
