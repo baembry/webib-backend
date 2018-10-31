@@ -23,9 +23,14 @@ router.post(
       return res.status(410).send("Unauthorized");
     }
     entry.userId = req.user._id;
-    entry.pageRange = entry.startPage
-      ? entry.startPage + "-" + entry.endPage
-      : null;
+    if (
+      entry.startPage &&
+      entry.startPage !== "undefined" &&
+      entry.startPage !== ""
+    ) {
+      entry.pageRange = entry.startPage + "-" + entry.endPage;
+    }
+
     const newEntry = await Entry.create(entry);
     let collection = null;
     if (collectionId && collectionId !== "undefined") {
