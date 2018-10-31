@@ -9,11 +9,9 @@ router.post(
   tryCatch(async (req, res) => {
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
-
     //make sure user is not already registered
     let user = await User.findOne({ email: req.body.email });
     if (user) return res.status(400).send("That email is already registered");
-
     const salt = await bcrypt.genSalt(10);
     const password = await bcrypt.hash(req.body.password, salt);
     const newUser = await User.create({
@@ -21,7 +19,6 @@ router.post(
       password: password,
       createdAt: req.body.createdAt
     });
-
     //generateAuthToken defined on userSchema
     const token = newUser.generateAuthToken();
     //header takes key/value pair

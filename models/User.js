@@ -6,7 +6,7 @@ const mongoose = require("mongoose"),
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
-    unique: true
+    sparse: true
   },
   email: {
     type: String,
@@ -15,7 +15,6 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    unique: true,
     required: true
   },
   createdAt: {
@@ -26,9 +25,6 @@ const userSchema = new mongoose.Schema({
 
 function validateUser(user) {
   const schema = {
-    username: Joi.string()
-      .min(3)
-      .max(50),
     email: Joi.string()
       .email()
       .required(),
