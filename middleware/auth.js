@@ -2,20 +2,6 @@ const jwt = require("jsonwebtoken"),
   config = require("config"),
   { User } = require("../models/User");
 
-// function auth(req, res, next) {
-//   const token = req.header("x-auth-token");
-//   if (!token) return res.status(401).send("Please Login");
-
-//   try {
-//     const decoded = jwt.verify(token, config.get("jwtPrivateKey"));
-//     //this is passed to the next callback and used to get user info
-//     req.user = decoded;
-//     next();
-//   } catch (ex) {
-//     res.status(400).send("Please login.");
-//   }
-// }
-
 async function auth(req, res, next) {
   const token = req.header("x-auth-token");
   if (!token) req.user = false;

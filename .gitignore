@@ -1,2 +1,4 @@
 # to save space in git repository
 node_modules/
+custom-environment-variables.json
+default.json
