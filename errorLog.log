@@ -58,3 +58,9 @@
 {"level":"error","message":"queryObj is not defined"}
 {"level":"error","message":"$and/$or/$nor must be a nonempty array"}
 {"level":"error","message":"$and/$or/$nor must be a nonempty array"}
+{"level":"error","message":"Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Entry\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Entry\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Entry\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Entry\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Entry\""}
+{"level":"error","message":"Cannot read property 'title' of undefined"}

@@ -17,6 +17,7 @@ module.exports = function makeQuery(entry) {
             { 'authors.lastName': lastName.toLowerCase() },
           ],
         };
+        console.log(subQuery);
         query.$and.push(subQuery);
       }
     }
@@ -29,10 +30,11 @@ module.exports = function makeQuery(entry) {
           editor.lastName.slice(1).toLowerCase();
         const subQuery = {
           $or: [
-            { 'authors.lastName': lastName },
-            { 'authors.lastName': lastName.toLowerCase() },
+            { 'editors.lastName': lastName },
+            { 'editors.lastName': lastName.toLowerCase() },
           ],
         };
+        console.log(subQuery);
         query.$and.push(subQuery);
       }
     }
@@ -40,5 +42,6 @@ module.exports = function makeQuery(entry) {
   if (query.$and.length === 0) {
     delete query.$and;
   }
+  console.log(query);
   return query;
 };

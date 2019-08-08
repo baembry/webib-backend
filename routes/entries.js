@@ -19,10 +19,15 @@ router.post(
   '/search',
   tryCatch(async function(req, res) {
     const entry = req.body.data;
+    if (!entry) {
+      res.status(400).send('Send query data');
+      return;
+    }
     //makeQuery builds a query based only on last names and titles
     const query = makeQuery(entry);
     const results = await Entry.find(query).limit(40);
     res.status(200).send(results);
+    res.status(200).send();
   })
 );
 
