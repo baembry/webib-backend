@@ -3,7 +3,8 @@ const express = require('express'),
   auth = require('../middleware/auth'),
   tryCatch = require('../middleware/tryCatch'),
   { Entry } = require('../models/Entry.js'),
-  { Collection } = require('../models/Collection.js');
+  { Collection } = require('../models/Collection.js'),
+  makeQuery = require('../utilities/makeQuery');
 
 router.get(
   '/',
@@ -11,6 +12,17 @@ router.get(
   tryCatch(async function(req, res) {
     const entries = await Entry.find({ userId: req.user._id });
     res.send(entries);
+  })
+);
+
+router.post(
+  '/search',
+  tryCatch(async function(req, res) {
+    const entry = req.body.data;
+    //makeQuery builds a query based only on last names and titles
+    const query = makeQuery(entry);
+    const results = await Entry.find(query).limit(40);
+    res.status(200).send(results);
   })
 );
 

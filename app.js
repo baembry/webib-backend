@@ -55,10 +55,7 @@ mongoose
   .catch(err => console.log('Could not connect to mongodb...', err));
 
 const corsOptions = {
-  origin: [
-    'http://localhost:3001',
-    'https://webib-front-end.herokuapp.com',
-  ],
+  origin: ['http://localhost:3000', 'https://webib-front-end.herokuapp.com'],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
