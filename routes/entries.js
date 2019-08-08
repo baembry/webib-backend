@@ -30,7 +30,6 @@ router.post(
   '/',
   auth,
   tryCatch(async (req, res) => {
-    console.log('entries route hit', req.body);
     const { entry, collectionId } = req.body;
     if (!req.user) {
       return res.status(410).send('Unauthorized');
@@ -47,7 +46,6 @@ router.post(
     const newEntry = await Entry.create(entry);
     let collection = null;
     if (collectionId && collectionId !== 'undefined') {
-      console.log('collectionId and type: ', collectionId, typeof collectionId);
       collection = await Collection.findById(collectionId);
       collection.entries.push(newEntry);
       collection.save();

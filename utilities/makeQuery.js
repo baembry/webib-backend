@@ -8,7 +8,15 @@ module.exports = function makeQuery(entry) {
   if (entry.authors) {
     for (let author of entry.authors) {
       if (author.lastName.length > 0) {
-        const subQuery = { 'authors.lastName': author.lastName };
+        const lastName =
+          author.lastName.slice(0, 1).toUpperCase() +
+          author.lastName.slice(1).toLowerCase();
+        const subQuery = {
+          $or: [
+            { 'authors.lastName': lastName },
+            { 'authors.lastName': lastName.toLowerCase() },
+          ],
+        };
         query.$and.push(subQuery);
       }
     }
@@ -16,7 +24,15 @@ module.exports = function makeQuery(entry) {
   if (entry.editors) {
     for (let editor of entry.editors) {
       if (editor.lastName.length > 0) {
-        const subQuery = { 'editors.lastName': editor.lastName };
+        const lastName =
+          editor.lastName.slice(0, 1).toUpperCase() +
+          editor.lastName.slice(1).toLowerCase();
+        const subQuery = {
+          $or: [
+            { 'authors.lastName': lastName },
+            { 'authors.lastName': lastName.toLowerCase() },
+          ],
+        };
         query.$and.push(subQuery);
       }
     }
