@@ -38,3 +38,23 @@
 {"level":"error","message":"E11000 duplicate key error collection: webib.users index: username_1 dup key: { : null }"}
 {"level":"error","message":"E11000 duplicate key error collection: webib.users index: username_1 dup key: { : null }"}
 {"level":"error","message":"E11000 duplicate key error collection: webib.users index: username_1 dup key: { : null }"}
+{"level":"error","message":"Can't use $rexex with String."}
+{"level":"error","message":"regExTitle is not defined"}
+{"level":"error","message":"Unexpected string in JSON at position 20"}
+{"level":"error","message":"Unexpected token l in JSON at position 50"}
+{"level":"error","message":"Unexpected token } in JSON at position 36"}
+{"level":"error","message":"$and/$or/$nor must be a nonempty array"}
+{"level":"error","message":"unknown top level operator: $regex"}
+{"level":"error","message":"Cast to String failed for value \"{ '$regex': /^[object Object]/i }\" at path \"lastName\" for model \"Entry\""}
+{"level":"error","message":"Cast to String failed for value \"{ '$regex': /^undefined/i }\" at path \"lastName\" for model \"Entry\""}
+{"level":"error","message":"Cast to String failed for value \"{ '$regex': /^undefined/i }\" at path \"lastName\" for model \"Entry\""}
+{"level":"error","message":"Cast to String failed for value \"{ '$regex': /^Suárez/i }\" at path \"lastName\" for model \"Entry\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Entry\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Entry\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Entry\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"search\" at path \"_id\" for model \"Entry\""}
+{"level":"error","message":"mongooseQueryObject is not defined"}
+{"level":"error","message":"queryObj is not defined"}
+{"level":"error","message":"queryObj is not defined"}
+{"level":"error","message":"$and/$or/$nor must be a nonempty array"}
+{"level":"error","message":"$and/$or/$nor must be a nonempty array"}
