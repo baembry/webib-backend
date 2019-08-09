@@ -2,3 +2,4 @@
 node_modules/
 custom-environment-variables.json
 default.json
+config
