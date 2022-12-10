@@ -17,7 +17,7 @@
     "bcryptjs": "^2.4.3",
     "config": "^2.0.1",
     "cors": "^2.8.4",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "joi": "^13.6.0",
     "jsonwebtoken": "^8.3.0",
     "merge": "^1.2.1",
